@@ -17,6 +17,9 @@
     "rsocket-core": "^0.0.8",
     "rsocket-websocket-client": "^0.0.8"
   },
+  "optionalDependencies": {
+    "fsevents": "*"
+  },
   "scripts": {
     "build": "webpack",
     "start": "webpack && http-server ./src/main/resources/web/ -p 3000 -c-1"
