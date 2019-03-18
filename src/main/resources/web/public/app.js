@@ -4047,7 +4047,6 @@ function addMessage(message) {
   var ul = document.getElementById("messages");
   var li = document.createElement("li");
   li.appendChild(document.createTextNode(message));
-  //ul.appendChild(li);
   ul.insertBefore(li, ul.childNodes[0]);
 
   if (canAnimate) {
@@ -4094,7 +4093,7 @@ function main() {
       //       socket.onClose().catch(error => console.error(error));
 
       socket.requestStream({
-        data: '#MondayMotivation',
+        data: '#proxibid',
         metadata: null
       }).subscribe({
         onComplete: () => console.log('complete'),

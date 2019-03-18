@@ -84,7 +84,7 @@ public class App {
                       new StreamAdapter() {
                         @Override
                         public void onTweet(Tweet tweet) {
-                          s.next(DefaultPayload.create(tweet.getText()));
+                          s.next(DefaultPayload.create("@" + tweet.getFromUser() + " - " + tweet.getText()));
                           System.out.println(tweet.getText());
                         }
                       }));
