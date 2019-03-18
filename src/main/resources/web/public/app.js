@@ -4041,11 +4041,31 @@ const {
 } = __webpack_require__(8);
 const RSocketWebSocketClient = __webpack_require__(33).default;
 
+var canAnimate = true;
+
 function addMessage(message) {
   var ul = document.getElementById("messages");
   var li = document.createElement("li");
   li.appendChild(document.createTextNode(message));
-  ul.appendChild(li);
+  //ul.appendChild(li);
+  ul.insertBefore(li, ul.childNodes[0]);
+
+  if (canAnimate) {
+    animateTitle();
+  }
+}
+
+function animateTitle() {
+  canAnimate = false;
+  var title = document.querySelector('#messages-title');
+  title.classList.add('vibration');
+  setTimeout(setAnimateTrue, 1000);
+}
+
+function setAnimateTrue() {
+  var title = document.querySelector('#messages-title');
+  title.classList.remove('vibration');
+  canAnimate = true;
 }
 
 function main() {
@@ -4074,13 +4094,13 @@ function main() {
       //       socket.onClose().catch(error => console.error(error));
 
       socket.requestStream({
-        data: '#FridayFeeling',
+        data: '#MondayMotivation',
         metadata: null
       }).subscribe({
         onComplete: () => console.log('complete'),
         onError: error => console.error(error),
         onNext: payload => {
-          console.log(payload.data);
+          //console.log(payload.data);
           addMessage(payload.data);
         },
         onSubscribe: subscription => {
