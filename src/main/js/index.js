@@ -19,13 +19,13 @@ function addMessage(message) {
 
 function animateTitle() {
   canAnimate = false;
-  var title = document.querySelector('#messages-title');
+  var title = document.querySelector('#messages-logo');
   title.classList.add('vibration');
   setTimeout(setAnimateTrue, 1000);
 }
 
 function setAnimateTrue() {
-  var title = document.querySelector('#messages-title');
+  var title = document.querySelector('#messages-logo');
   title.classList.remove('vibration');
   canAnimate = true;
 }
