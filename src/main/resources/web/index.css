@@ -9,6 +9,7 @@ body {
 .title {
   font-size: 3rem;
   margin: 10px;
+  color: white;
 }
 
 #messages-logo {
